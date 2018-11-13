@@ -17,6 +17,8 @@ class CreateTasklistTable extends Migration
             $table->increments('id');
             $table->string('content'); //content カラム追加
             $table->timestamps();
+            
+
         });
     }
 
