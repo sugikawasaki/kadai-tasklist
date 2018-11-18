@@ -81,12 +81,22 @@ class TasklistsController extends Controller
      */
     public function show($id)
     {
+        //表示すべきタスクを取得する
         $tasklist = Tasklist::find($id);
         
+        //そのタスクの持ち主とログインしているユーザ－が一致しているか調べる
+        if(\Auth::id()=== $task->user_id){
+        //一致していたら詳細ページを表示
         return view('tasklists.show',[
             'tasklist' => $tasklist,
-        ]);
-    
+        ]);            
+            
+            //いまcontrollerに書かれている処理
+        }else{
+            //一致していなかったらTOPに飛ばす
+            return redirect('/');
+        }
+        
     }
 
     /**
