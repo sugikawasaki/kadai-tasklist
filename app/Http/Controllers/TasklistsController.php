@@ -108,7 +108,7 @@ class TasklistsController extends Controller
     public function edit($id)
     {
         //編集すべきタスクを取得する
-        $tasklist = Tasklist::find($id);
+        $tasklist = Tasklist::edit($id);
         
         //そのタスクを持ち主とログインしているユーザーが一致しているかを調べる
         if(\Auth::id()===$task->user_id){
