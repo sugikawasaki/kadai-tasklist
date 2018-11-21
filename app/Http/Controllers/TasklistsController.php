@@ -114,7 +114,7 @@ class TasklistsController extends Controller
         if(\Auth::id()===$task->user_id){
         //一致していたら編集ページを表示
         return view('tasklists.edit',[
-            'tasklists' => $tasklist,
+            'tasklist' => $tasklist,
         ]);
         //いまcontrollerに書かれている処理
         }else{
