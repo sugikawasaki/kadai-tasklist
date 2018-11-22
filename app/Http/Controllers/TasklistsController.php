@@ -85,7 +85,7 @@ class TasklistsController extends Controller
         $tasklist = Tasklist::find($id);
         
         //そのタスクの持ち主とログインしているユーザ－が一致しているか調べる
-        if(\Auth::id()=== $task->user_id){
+        if(\Auth::id()=== $tasklist->user_id){
         //一致していたら詳細ページを表示
         return view('tasklists.show',[
             'tasklist' => $tasklist,
@@ -111,7 +111,7 @@ class TasklistsController extends Controller
         $tasklist = Tasklist::edit($id);
         
         //そのタスクを持ち主とログインしているユーザーが一致しているかを調べる
-        if(\Auth::id()===$task->user_id){
+        if(\Auth::id()===$tasklist->user_id){
         //一致していたら編集ページを表示
         return view('tasklists.edit',[
             'tasklist' => $tasklist,
